@@ -1,0 +1,13 @@
+data/
+models/
+mlruns/
+venv/
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+*.log

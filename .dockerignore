@@ -1,0 +1,12 @@
+data/
+mlruns/
+venv/
+__pycache__/
+*.pyc
+tests/
+terraform/
+monitoring/
+.git/
+*.log
+.env
+README.md
