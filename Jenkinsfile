@@ -33,6 +33,7 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'kaggle-json', variable: 'KAGGLE_JSON')]) {
                     sh '''
+                        . venv/bin/activate
                         mkdir -p ~/.kaggle
                         cp $KAGGLE_JSON ~/.kaggle/kaggle.json
                         chmod 600 ~/.kaggle/kaggle.json
