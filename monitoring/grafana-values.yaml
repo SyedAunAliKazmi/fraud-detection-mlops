@@ -1,0 +1,32 @@
+service:
+  type: NodePort
+  nodePort: 30030
+
+adminPassword: "admin123"
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-server.monitoring.svc.cluster.local
+        access: proxy
+        isDefault: true
+
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+      - name: default
+        folder: ''
+        type: file
+        options:
+          path: /var/lib/grafana/dashboards/default
+
+dashboards:
+  default:
+    kubernetes:
+      gnetId: 6417
+      revision: 1
+      datasource: Prometheus
